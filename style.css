@@ -10,7 +10,35 @@ h1 {
 	font-weight: bolder;
 }
 
-
 body {
 	margin-left:80px;
+}
+
+.wp-block-code {
+/*	max-width:1000px;*/
+	display: inline-block;
+	border: 1px solid #ccc; 	
+}
+
+
+.menu li.home::before {
+	content: "\f015";
+	font-family: 'font Awesome 5 Free';
+	font-weight: 900;
+}
+
+.menu li.pc {
+
+}
+
+.menu li.arch  {
+
+}
+
+.menu li.etc  {
+
+}
+
+.menu li.word  {
+
 }

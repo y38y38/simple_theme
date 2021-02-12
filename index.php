@@ -7,11 +7,6 @@
 </span>
 
 
-
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
 &nbsp;
 &nbsp;
 
@@ -19,7 +14,11 @@
 	bloginfo( 'description' );
 ?></p>
 	
-
+<?php 
+	wp_nav_menu( array( 
+		'theme_location' => 'main-menu' 
+	)); 
+?>
 
 <?php 
 if(have_posts()): 
