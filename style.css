@@ -1,26 +1,54 @@
-
-h1 {
-	font-family:  "Meiryo UI" , "sans-serif";
-	font-size: xxx-large;
+.container {
+	font-family: "Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
 }
 
+.title_item {
+	width: 1100px;
+	margin: 0 auto;
+	margin-top:  40px;
+}
 .blog_title {
-	font-family:  "Meiryo UI" , "sans-serif";
+	font-family:  "Yu Gothic" , system-ui;
 	font-size: xxx-large;
 	font-weight: bolder;
 }
 
-body {
-	margin-left:80px;
+ul.menu {
+	overflow: hidden;
 }
 
-.wp-block-code {
-/*	max-width:1000px;*/
-	display: inline-block;
-	border: 1px solid #ccc; 	
+.menu li {
+	float:left;
+	width:150px;
+	text-align: center;
 }
 
 
+.menu_item {
+	background:#000;
+	height: 50px;
+}
+
+.menu_title {
+	font-family:  "Yu Gothic" , system-ui;
+	font-size: large;
+	color: #FFF;
+	width: 1100px;
+	margin: 0 auto;
+	margin-top:  10px;
+	line-height: 50px;
+
+}
+
+
+
+.main_item {
+	width: 1100px;
+	margin: 0 auto;
+	margin-top:  40px;
+}
+
+/*
 .menu li.home::before {
 	content: "\f015";
 	font-family: 'font Awesome 5 Free';
@@ -42,3 +70,11 @@ body {
 .menu li.word  {
 
 }
+*/
+.wp-block-code {
+	/*	max-width:1000px;*/
+		display: inline-block;
+		border: 1px solid #ccc; 	
+}
+
+	
