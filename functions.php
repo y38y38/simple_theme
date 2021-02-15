@@ -8,6 +8,7 @@ function register_my_menus() {
 	'footer-menu'  => 'Footer Menu',
 	) );
 }
+
 function my_theme_widgets_init() {
 	register_sidebar( array(
 	  'id' => 'sidebar-1'
