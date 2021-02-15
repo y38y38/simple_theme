@@ -8,6 +8,10 @@
 	margin: 0 auto;
 	padding-top:  40px;
 }
+.title_area2 {
+	margin: 40px;
+
+}
 
 /* blog title */
 h1 {
@@ -66,13 +70,26 @@ a:hover{
 
 
 .main_area {
-	width: 1100px;
-	margin: 0 auto;
-	margin-top:  40px;
-}
+	display: inline-flex;
 
+}
+.main_content_area {
+	width: 1100px;
+	margin: 40 auto;
+/*	margin-top:  40px;*/
+	margin:40px;
+
+}
+.sidebar_area {
+	margin:40px;
+	background-color: #FAFAFA;	
+}
 .post_produce {
 	background-color: #FAFAFA;	
+}
+
+.post_produce_category {
+	text-align: center;
 }
 
 .date_item {
