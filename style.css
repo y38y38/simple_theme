@@ -10,7 +10,6 @@
 }
 .title_area2 {
 	margin: 40px;
-
 }
 
 /* blog title */
@@ -70,18 +69,23 @@ a:hover{
 
 
 .main_area {
-	display: inline-flex;
+/*	display: inline-flex;*/
+	width: 1100px;
+	margin: 0 auto;
+
+}
+.main_area2 {
+	margin: 40px;
 
 }
 .main_content_area {
 	width: 1100px;
-	margin: 40 auto;
 /*	margin-top:  40px;*/
-	margin:40px;
+/*	margin:40px;*/
 
 }
 .sidebar_area {
-	margin:40px;
+/*	margin:40px;*/
 	background-color: #FAFAFA;	
 }
 .post_produce {
