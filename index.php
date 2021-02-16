@@ -33,7 +33,6 @@
 	<div class="main_area">
 		<div class="main_area2"">
 			<div class="main_content_area" >
-				工事中
 				<?php 
 					if(have_posts()): 
 						while(have_posts()):
@@ -56,6 +55,8 @@
 								</div>
 							</br>
 							<?php
+								$size = get_option( 'thumbnail_size_w' );
+								echo $size;
 								the_post_thumbnail('large');
 							?>
 						</div>
