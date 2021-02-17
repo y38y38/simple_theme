@@ -55,8 +55,15 @@
 								</div>
 							</br>
 							<?php
-								$size = get_option( 'thumbnail_size_w' );
-								echo $size;
+								//$size = get_option( 'thumbnail_size_w' );
+								//echo  $size . "</br>";
+$post_id = get_the_ID();
+//echo $post_id . "</br>";
+$post_thumbnail_id = get_post_thumbnail_id( $post_id );
+$attachment = wp_get_attachment_image_src( $post_thumbnail_id, 'full' );
+$width=$attachment[1];
+$height=$attachment[2];
+echo  $width . " " . $height . "</br>";
 								the_post_thumbnail('large');
 							?>
 						</div>
