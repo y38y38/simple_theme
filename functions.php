@@ -6,7 +6,9 @@ function get_thumbnail_width($post_id) {
 	$post_thumbnail_id = get_post_thumbnail_id( $post_id );
 	$attachment = wp_get_attachment_image_src( $post_thumbnail_id, 'full' );
 	$width=$attachment[1];
-	return $witdh;
+	echo $width . "gg</br>";
+
+	return $width;
 }
 //functions.php
 function register_my_menus() { 

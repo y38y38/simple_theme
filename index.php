@@ -57,13 +57,16 @@
 							<?php
 								//$size = get_option( 'thumbnail_size_w' );
 								//echo  $size . "</br>";
-$post_id = get_the_ID();
+$post_id2 = get_the_ID();
 //echo $post_id . "</br>";
-$post_thumbnail_id = get_post_thumbnail_id( $post_id );
+$post_thumbnail_id = get_post_thumbnail_id( $post_id2 );
 $attachment = wp_get_attachment_image_src( $post_thumbnail_id, 'full' );
 $width=$attachment[1];
 $height=$attachment[2];
 echo  $width . " " . $height . "</br>";
+$width2 = get_thumbnail_width($post_id);
+echo  $width2 .  "ff</br>";
+
 								the_post_thumbnail('large');
 							?>
 						</div>
