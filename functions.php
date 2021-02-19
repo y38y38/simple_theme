@@ -1,15 +1,22 @@
 <?php
 
+define("INDEX_THUMNAIL_WIDTH", 500);
 
-
-function get_thumbnail_width($post_id) {
+/* 横のサイズが決まっている時に、同じ比率の縦のサイズを求める */
+function get_thumbnail_width_and_height($post_id, $thumbnail_max_width) {
 	$post_thumbnail_id = get_post_thumbnail_id( $post_id );
 	$attachment = wp_get_attachment_image_src( $post_thumbnail_id, 'full' );
-	$width=$attachment[1];
-	echo $width . "gg</br>";
-
-	return $width;
+	$array = array(0,0);//width height
+	if($attachment[1] > $thumbnail_max_width) {
+		$array[0] = $thumbnail_max_width;
+		$array[1] = $attachment[2] * $thumbnail_max_width / $attachment[1];
+	} else {
+		$array[0] = $attachment[1];
+		$array[1] = $attachment[2];
+	}
+	return $array;
 }
+
 //functions.php
 function register_my_menus() { 
 	register_nav_menus( array( //複数のナビゲーションメニューを登録する関数

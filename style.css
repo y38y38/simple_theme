@@ -1,10 +1,8 @@
 :root {
-	--container-width:1100px;
-	--main_content-padding:40px;
-/*	--content-color:#FAFAFA;*/
-	--content-color:#888;
+	--container_width:1000px;
+	--main_content_padding:40px;
+	--content_color:#FAFAFA;
 }
-
 
 .container {
 	font-family: "Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
@@ -12,7 +10,7 @@
 }
 
 .title_area {
-	width: var(--container-width);
+	width: var(--container_width);
 	margin: 0 auto;
 	padding-top:  40px;
 }
@@ -29,14 +27,12 @@ h1 {
 }
 
 /* post title */
-/*
 h2 {
 	font-size: xx-large;
 	font-weight: bolder;
-	padding : 60px;
+	padding : 20px;
 	color:#888;	
 }
-*/
 
 ul.menu {
 	overflow: hidden;
@@ -50,7 +46,6 @@ a:hover{
 	text-decoration: underline;
 }
 
-
 .menu li {
 	float:left;
 	width:150px;
@@ -63,34 +58,30 @@ a:hover{
 	height: 50px;
 }
 
-.menu_title {
+.menu_area2 {
+	width: var(--container_width);
+	margin: 0 auto;
+
 	font-family:  "Yu Gothic" , system-ui;
 	font-size: large;
 	color: #FFF;
-	width: var(--container-width);
-	margin: 0 auto;
 	margin-top:  10px;
 	line-height: 50px;
-
 }
-
-/*
-
 .main_area {
-	width: var(--container-width);
+	width: var(--container_width);
 	margin: 0 auto;
-
+	border:solid #F00 1px;
 }
-*/
+
 .main_area2 {
 	display: inline-flex;
-/*	margin: 40px;*/
+	border:solid #0F0 1px;
 
 }
 
 /*
 .main_content_area {
-	width: 1100px;
 	margin-top:  40px;
 	margin:40px;
 
@@ -98,51 +89,55 @@ a:hover{
 */
 
 .sidebar_area {
-	width:400px;
-	padding:var(--main_content-padding);
-/*	background-color: var(--content-color);	*/
+/*	width:400px;*/
+/*	padding:var(--main_content_padding);*/
+/*	background-color: var(--content_color);	*/
 	background-color:#b0b0b0;
+	margin-top:40px;
 
 }
 
 .post_produce {
-	padding:var(--main_content-padding);
-	background-color: var(--content-color);	
+/*	width:800px;*/
+/*	padding:var(--main_content_padding);*/
+	background-color: var(--content_color);	
+	margin:40px;
+	border:solid #000 1px;
 }
 
-/*
+
 .post_produce_category {
 	text-align: center;
 }
-*/
-/*
+
+
 .date_item {
 	text-align: center;
 	padding-top: 80px;
 }
-*/
-/*
+
+
 .post_title_item {
-	text-align: center;
+/*	text-align: center;*/
 	font-size: larger;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
 }
-*/
 
+.post_thumbnail img {
+	   border:solid #00F 4px;
+/*	   text-align: center;
+	   margin: 0 auto;*/
+	   background-color: #FF0;	
+	   display: block;
 /*
-.menu li.home::before {
-	content: "\f015";
-	font-family: 'font Awesome 5 Free';
-	font-weight: 900;
+	   margin-left: auto;
+	   margin-right: auto;
+*/
+	margin:0px auto;
 }
-
-.menu li.pc {
-
-}
-
-.menu li.arch  {
-
-}
-
+   
+/*
 .menu li.etc  {
 
 }
