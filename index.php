@@ -21,7 +21,7 @@
 
 
 	<div class="menu_area">
-		<div class="menu_title">
+		<div class="menu_area2">
 			<?php 
 				wp_nav_menu( array( 
 					'theme_location' => 'main-menu', 
@@ -49,26 +49,18 @@
 									foreach($category as $cate) {
 										echo '<a href="' . get_category_link( $cate->term_id ) . '">' . $cate->cat_name . '</a>';
 										echo '&nbsp;&nbsp;&nbsp;';
-									
 									}
 								?>
 								</div>
 							</br>
-							<?php
-								//$size = get_option( 'thumbnail_size_w' );
-								//echo  $size . "</br>";
-$post_id2 = get_the_ID();
-//echo $post_id . "</br>";
-$post_thumbnail_id = get_post_thumbnail_id( $post_id2 );
-$attachment = wp_get_attachment_image_src( $post_thumbnail_id, 'full' );
-$width=$attachment[1];
-$height=$attachment[2];
-echo  $width . " " . $height . "</br>";
-$width2 = get_thumbnail_width($post_id);
-echo  $width2 .  "ff</br>";
-
-								the_post_thumbnail('large');
-							?>
+							
+							<div class="post_thumbnail">
+								<?php
+									$width_and_height = get_thumbnail_width_and_height($post_id, INDEX_THUMNAIL_WIDTH);
+									//echo  $width_and_height[0] .  "x" . $width_and_height[1] . "</br>";
+									the_post_thumbnail($width_and_height);
+								?>
+							</div>
 						</div>
 				<?php
 						endwhile;
