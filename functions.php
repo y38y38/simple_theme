@@ -1,6 +1,6 @@
 <?php
 
-define("INDEX_THUMNAIL_WIDTH", 500);
+define("INDEX_THUMNAIL_WIDTH", 600);
 
 /* 横のサイズが決まっている時に、同じ比率の縦のサイズを求める */
 function get_thumbnail_width_and_height($post_id, $thumbnail_max_width) {
@@ -27,11 +27,16 @@ function register_my_menus() {
 }
 function my_theme_widgets_init() {
 	register_sidebar( array(
-	  'id' => 'sidebar-1'
+	  'id' => 'sidebar-1',
+/*	  'before_widget' => '<div class="widget_stlye">',
+	  'after_widget' => '</div>',
+	  'before_title' => '<div class="widget_title"',
+	  'after_title' => '</div>'*/
 	) );
 }
 
 add_action( 'widgets_init', 'my_theme_widgets_init' );
+
 add_action( 'after_setup_theme', 'register_my_menus' );
 
 add_theme_support('post-thumbnails');

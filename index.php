@@ -1,6 +1,4 @@
 <?php get_header(); ?>
-
-
 <div class="container">
 	<div class="title_area">
 		<div class="title_area2">
@@ -42,7 +40,9 @@
 								the_post();
 								the_date('Y/m/d', '<div class="date_item">', '</div>');
 							?>
-								<h2><a href="<?php the_permalink() ?>"> <?php the_title() ?></a></h2>
+								<div class="post_title_item">
+									<h2><a href="<?php the_permalink() ?>"> <?php the_title() ?></a></h2>
+								</div>
 								<div class="post_produce_category">
 								<?php
 									$category=get_the_category();
