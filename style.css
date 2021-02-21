@@ -208,13 +208,14 @@ li.widget {
 }
 
 
-.widget_recent_entries {
-/*	line-height: 22px;*/
-/*	color:aqua;*/
-	border:aqua solid 2px;
+
+.widget_recent_entries li {
+	padding-top: 15px;
+	line-height: 24px;
 }
 
-.widget_recent_entries.li {
-	color:aqua;
-}
+.widget_categories li {
+	padding-top: 10px;
+/*	line-height: 24px;*/
 
+}

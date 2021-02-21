@@ -33,6 +33,15 @@ function my_theme_widgets_init() {
 	  'before_title' => '<div class="widget_title"',
 	  'after_title' => '</div>'*/
 	) );
+
+	register_sidebar( array(
+		'id' => 'sidebar-2',
+  /*	  'before_widget' => '<div class="widget_stlye">',
+		'after_widget' => '</div>',
+		'before_title' => '<div class="widget_title"',
+		'after_title' => '</div>'*/
+	  ) );
+  
 }
 
 add_action( 'widgets_init', 'my_theme_widgets_init' );
