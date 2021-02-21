@@ -61,6 +61,13 @@
 									the_post_thumbnail($width_and_height);
 								?>
 							</div>
+							<div class="post_text">
+								<?php  //echo get_the_excerpt();?> 
+								<?php  echo my_post_substr();?> ...
+							</div>
+							<div class="post_submit">
+								<a href="<?php the_permalink() ?>"> READ MORE</a>
+							</div>
 						</div>
 				<?php
 						endwhile;

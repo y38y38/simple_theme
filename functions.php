@@ -1,6 +1,7 @@
 <?php
 
-define("INDEX_THUMNAIL_WIDTH", 600);
+define("INDEX_THUMNAIL_WIDTH", 520);
+define("POST_TEXT_SIZE", 70);
 
 /* 横のサイズが決まっている時に、同じ比率の縦のサイズを求める */
 function get_thumbnail_width_and_height($post_id, $thumbnail_max_width) {
@@ -42,6 +43,11 @@ function my_theme_widgets_init() {
 		'after_title' => '</div>'*/
 	  ) );
   
+}
+
+function my_post_substr() {
+	$post_text = get_the_excerpt();
+	return mb_substr($post_text ,0, POST_TEXT_SIZE);
 }
 
 add_action( 'widgets_init', 'my_theme_widgets_init' );

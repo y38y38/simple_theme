@@ -1,3 +1,9 @@
+/*
+ * 基本Paddingは、上におく。
+ *
+ */
+
+
 :root {
 	--container_width:1000px;
 	--common_padding:40px;
@@ -10,6 +16,7 @@
 
 	--content_color   :#FAFAFA;
 	--background_color:#f2f2f2;
+	--text_color :#888;
 
 
 }
@@ -40,7 +47,7 @@ h2 {
 	font-size: xx-large;
 	font-weight: bolder;
 /*	padding : var(--common_padding);*/
-	color:#888;	
+	color: var(--text_color);	
 }
 
 ul.menu {
@@ -108,11 +115,12 @@ a:hover{
 }
 
 .post_produce {
-/*	width:800px;*/
+	width:600px;
 /*	padding:var(--common_padding);*/
 	background-color: var(--content_color);	
 	margin:var(--common_padding);
 /*	border:solid #000 1px;*/
+	padding-bottom: var(--common_padding);
 }
 
 
@@ -145,8 +153,24 @@ a:hover{
 */
 	margin:0px auto;
 }
-   
-/*
+.post_text {
+	padding: var(--common_padding);
+	line-height: 24px;
+	color: var(--text_color);	
+	font-size: 20px;
+
+}   
+
+.post_submit {
+	width:160px;
+	border: solid var(--text_color) 1px;
+	margin: auto;
+	text-align: center;
+	padding:20px;
+/*	padding-bottom:20px;*/
+}
+
+	/*
 .menu li.etc  {
 
 }
