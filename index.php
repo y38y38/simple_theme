@@ -1,31 +1,11 @@
 <?php get_header(); ?>
 <div class="container">
-<div class="title_area">
-		<div class="title_area2">
-		<h1 ><a href="<?php echo get_home_url() ?>"> <?php bloginfo( 'name' );?> </h1>
-			<span class="title_description">
-				<?php
-					bloginfo( 'description' );
-				?>
-			</span>
-			</br>
-		</div>
-	</div>
-
-
-	<div class="menu_area">
-		<div class="menu_area2">
-			<?php 
-				wp_nav_menu( array( 
-					'theme_location' => 'main-menu', 
-				)); 
-			?>
-		</div>
-	</div>
+<?php include(TEMPLATEPATH . "/title_and_menu.php") ?>
 	
 	<div class="main_area">
 		<div class="main_area2"">
 			<div class="main_content_area" >
+
 				<?php 
 					if(have_posts()): 
 						while(have_posts()):

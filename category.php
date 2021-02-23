@@ -1,36 +1,16 @@
 <?php get_header(); ?>
 <div class="container">
-	<div class="title_area">
-		<div class="title_area2">
-		<h1 style="display:inline">
-			<?php
-				bloginfo( 'name' );
-			?>
-			</h1>
-			&nbsp;
-			&nbsp;
-	
-			<?php
-				bloginfo( 'description' );
-			?>
-			</br>
-		</div>
-	</div>
+<?php include(TEMPLATEPATH . "/title_and_menu.php") ?>
 
-
-	<div class="menu_area">
-		<div class="menu_area2">
-			<?php 
-				wp_nav_menu( array( 
-					'theme_location' => 'main-menu', 
-				)); 
-			?>
-		</div>
-	</div>
-	
 	<div class="main_area">
 		<div class="main_area2"">
 			<div class="main_content_area" >
+				<?php 
+					$category = get_the_category(); 
+					if ( $category[0] ) {
+						echo '<a href="' . get_category_link( $category[0]->term_id ) . '">' . $category[0]->cat_name . '</a>';
+					}
+				?>
 				<?php 
 					if(have_posts()): 
 						while(have_posts()):
@@ -61,8 +41,12 @@
 									the_post_thumbnail($width_and_height);
 								?>
 							</div>
-							<div class="post_content_text">
-								<?php the_content(); ?>
+							<div class="post_text">
+								<?php  //echo get_the_excerpt();?> 
+								<?php  echo my_post_substr();?> ...
+							</div>
+							<div class="post_submit">
+								<a href="<?php the_permalink() ?>"> READ MORE</a>
 							</div>
 
 						</div>
