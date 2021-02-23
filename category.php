@@ -5,12 +5,11 @@
 	<div class="main_area">
 		<div class="main_area2"">
 			<div class="main_content_area" >
+				<div class="main_category"><h2>
 				<?php 
-					$category = get_the_category(); 
-					if ( $category[0] ) {
-						echo '<a href="' . get_category_link( $category[0]->term_id ) . '">' . $category[0]->cat_name . '</a>';
-					}
+				single_cat_title();
 				?>
+				</h2></div>
 				<?php 
 					if(have_posts()): 
 						while(have_posts()):

@@ -290,6 +290,22 @@ ul.menu {
     height: auto;
 }
 
+
+
+/*
+ **** category ***
+ */
+
+ .main_category h2 {
+	text-align: center;
+	font-size: xx-large;
+	font-weight: bolder;
+	color: var(--text_color);
+	margin-left: var(--common_padding);	
+	background-color: var(--background_color);
+}
+
+
 /*
 .wp-block-image{
 	width: 512px;

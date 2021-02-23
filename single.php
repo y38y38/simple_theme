@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 <div class="container">
 <?php include(TEMPLATEPATH . "/title_and_menu.php") ?>
-	
 	<div class="main_area">
 		<div class="main_area2"">
 			<div class="main_content_area" >
