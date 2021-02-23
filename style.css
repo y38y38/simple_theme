@@ -5,8 +5,17 @@
 
 
 :root {
-	--container_width:1200px;
+	--main_contents:800px;
+	--sidebar_width:400px;
 	--common_padding:40px;
+
+/*	--container_width: calc(var(--main_contents) + var(--sidebar_width) +  (var(--common_padding) * 3 ));*/
+	--container_width:1320px;
+
+
+	--post_submit_width:160px;
+
+
 
 	--serach_text_width:180px;
 	--serarhcfiled_heigth:50px;
@@ -19,6 +28,8 @@
 	--text_color :#888;
 
 
+	--menu_background_color:#000;
+	
 }
 
 
@@ -29,6 +40,19 @@
 	background-color:var(--background_color);
 }
 
+
+a {
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+
+/*
+ ***   title  ****
+ */
 .title_area {
 	width: var(--container_width);
 	margin: 0 auto;
@@ -53,29 +77,26 @@ h2 {
 	color: var(--text_color);	
 }
 
+/*
+ ***   menu  ****
+ */
+
+
 ul.menu {
 	overflow: hidden;
 }
 
 
-a {
-	text-decoration: none;
-}
-
-a:hover{
-	text-decoration: underline;
-}
 
 .menu li {
 	float:left;
-/*	width:150px;*/
 	text-align: center;
 	padding-left: var(--common_padding);
 }
 
 
 .menu_area {
-	background:#000;
+	background:var(--menu_background_color);
 	height: 50px;
 }
 
@@ -89,6 +110,13 @@ a:hover{
 	margin-top:  10px;
 	line-height: 50px;
 }
+
+
+
+/*
+ ***   main  ****
+ */
+
 .main_area {
 	width: var(--container_width);
 	margin: 0 auto;
@@ -110,19 +138,24 @@ a:hover{
 */
 
 .sidebar_area {
-/*	width:400px;*/
+	width:var (--sidebar_width);
 /*	padding:var(--common_padding);*/
 /*	background-color: var(--content_color);	*/
 /*	margin-top:var(--common_padding);*/
 
 }
 
+
+/* index php */
+
 .post_produce {
-/*	width:600px;*/
+	width: var(--main_contents);
+
+	/*	width:600px;*/
 /*	padding:var(--common_padding);*/
 	background-color: var(--content_color);	
 	margin:var(--common_padding);
-/*	border:solid #000 1px;*/
+	border:solid #00F 1px;
 	padding-bottom: var(--common_padding);
 }
 
@@ -145,17 +178,15 @@ a:hover{
 }
 
 .post_thumbnail img {
-/*	   border:solid #00F 4px;
-	   text-align: center;
-	   margin: 0 auto;
-	   background-color: #FF0;	*/
-   display: block;
 /*
-	   margin-left: auto;
-	   margin-right: auto;
-*/
+    display: block;
 	margin:0px auto;
+*/
+    max-width: 100%;
+    height: auto;
 }
+
+
 .post_text {
 	padding: var(--common_padding);
 	line-height: 24px;
@@ -165,6 +196,7 @@ a:hover{
 }   
 
 .post_submit {
+/*	width:var (--post_submit_width);*/
 	width:160px;
 	border: solid var(--text_color) 1px;
 	margin: auto;
@@ -174,7 +206,11 @@ a:hover{
 }
 
 
+
+
+/* single php */
 .post_content_text {
+	width: var(--main_contents);
 	padding: var(--common_padding);
 	color: var(--text_color);	
 	font-size: 20px;
@@ -322,19 +358,47 @@ li.widget {
 /*	line-height: 24px;*/
 
 }
-@media screen and (max-width: 959px) {
+
+
+
+
+/*@media screen and (max-width: 959px) {*/
+
+@media screen and (max-width: 1320px) {
 	:root {
-		--container_width:300px;
+		--main_contents:90%;
+		--container_width:100%;
+/*		--sidebar_width:200;*/
+	
 	}
-	.main_area2 {
+	
+.main_area2 {
 		display: flex;
 		flex-direction: column;
 		border:solid #0F0 1px;
+/*		overflow: hidden;*/
+		word-break: break-all;
 	
 	}
 		
 }
+/*
+@media screen and (max-width: 840px) {
 
+:root {
+	--main_contents:80%;
+	--container_width:90%;
+
+}
+	.main_area2 {
+			display: flex;
+			flex-direction: column;
+			border:solid #0F0 1px;
+		
+		}
+			
+	}
+	
 /*
 @media screen and (max-width: 480px) {
 	:root {

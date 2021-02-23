@@ -56,10 +56,11 @@
 							
 							<div class="post_thumbnail">
 								<?php
-									$width_and_height = get_thumbnail_width_and_height($post_id, INDEX_THUMNAIL_WIDTH);
+//									$width_and_height = get_thumbnail_width_and_height($post_id, INDEX_THUMNAIL_WIDTH);
 									//echo  $width_and_height[0] .  "x" . $width_and_height[1] . "</br>";
-									the_post_thumbnail($width_and_height);
-								?>
+//									the_post_thumbnail($width_and_height);
+									the_post_thumbnail();
+?>
 							</div>
 							<div class="post_text">
 								<?php  //echo get_the_excerpt();?> 
