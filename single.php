@@ -2,17 +2,12 @@
 <div class="container">
 	<div class="title_area">
 		<div class="title_area2">
-		<h1 style="display:inline">
-			<?php
-				bloginfo( 'name' );
-			?>
-			</h1>
-			&nbsp;
-			&nbsp;
-	
-			<?php
-				bloginfo( 'description' );
-			?>
+		<h1 ><a href="<?php echo get_home_url() ?>"> <?php bloginfo( 'name' );?> </h1>
+			<span class="title_description">
+				<?php
+					bloginfo( 'description' );
+				?>
+			</span>
 			</br>
 		</div>
 	</div>

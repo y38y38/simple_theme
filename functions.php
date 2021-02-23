@@ -1,7 +1,8 @@
 <?php
 
+
 define("INDEX_THUMNAIL_WIDTH", 520);
-define("POST_TEXT_SIZE", 70);
+
 
 /* 横のサイズが決まっている時に、同じ比率の縦のサイズを求める */
 function get_thumbnail_width_and_height($post_id, $thumbnail_max_width) {
@@ -29,26 +30,43 @@ function register_my_menus() {
 function my_theme_widgets_init() {
 	register_sidebar( array(
 	  'id' => 'sidebar-1',
-/*	  'before_widget' => '<div class="widget_stlye">',
-	  'after_widget' => '</div>',
-	  'before_title' => '<div class="widget_title"',
-	  'after_title' => '</div>'*/
 	) );
 
 	register_sidebar( array(
 		'id' => 'sidebar-2',
-  /*	  'before_widget' => '<div class="widget_stlye">',
-		'after_widget' => '</div>',
-		'before_title' => '<div class="widget_title"',
-		'after_title' => '</div>'*/
 	  ) );
   
 }
 
+/*title とメニューを表示用の関数*/
+function my_title_and_menu() {
+	echo '<div class="title_area">';
+	echo '	<div class="title_area2">';
+	echo '	<h1 >';
+	echo 			get_bloginfo( 'name' );
+	echo '	</h1>';
+	echo '		<span class="title_description">';
+	echo 				get_bloginfo( 'description' );
+	echo '		</span>';
+	echo '		</br>';
+	echo '	</div>';
+	echo ' </div>';
+	echo '<div class="menu_area">';
+	echo '	<div class="menu_area2">';
+	echo 			wp_nav_menu( array( 
+					'theme_location' => 'main-menu', 
+				)); 
+	echo '	</div>';
+	echo '</div>';
+}
+
+/* index用のテキスト抜粋用の関数*/
+define("POST_TEXT_SIZE", 70);
 function my_post_substr() {
 	$post_text = get_the_excerpt();
 	return mb_substr($post_text ,0, POST_TEXT_SIZE);
 }
+
 
 add_action( 'widgets_init', 'my_theme_widgets_init' );
 

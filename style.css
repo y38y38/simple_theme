@@ -12,7 +12,6 @@
 /*	--container_width: calc(var(--main_contents) + var(--sidebar_width) +  (var(--common_padding) * 3 ));*/
 	--container_width:1320px;
 
-
 	--post_submit_width:160px;
 
 
@@ -55,20 +54,6 @@ a:hover{
 	text-decoration: underline;
 }
 
-
-/*
- ***   title  ****
- */
-.title_area {
-	width: var(--container_width);
-	margin: 0 auto;
-	padding-top:  var(--common_padding);
-}
-
-.title_area2 {
-	margin: var(--common_padding);
-}
-
 /* blog title */
 h1 {
 	font-family:  "Yu Gothic" , system-ui;
@@ -80,9 +65,35 @@ h1 {
 h2 {
 	font-size: xx-large;
 	font-weight: bolder;
-/*	padding : var(--common_padding);*/
 	color: var(--text_color);	
 }
+
+
+/*
+ ***   title  ****
+ */
+.title_area {
+	width: var(--container_width);
+	margin: 0 auto;
+	padding:  var(--common_padding);
+}
+
+/*
+.title_area2 {
+	margin: var(--common_padding);
+	border:solid #00F 1px;
+
+}
+*/
+.title_area2 h1 {
+	display:inline;
+}
+
+.title_description {
+/*	display:inline;*/
+
+}
+
 
 /*
  ***   menu  ****
@@ -93,11 +104,8 @@ ul.menu {
 	overflow: hidden;
 }
 
-
-
 .menu li {
 	float:left;
-	text-align: center;
 	padding-left: var(--common_padding);
 }
 
@@ -105,6 +113,7 @@ ul.menu {
 .menu_area {
 	background:var(--menu_background_color);
 	height: 50px;
+	border:solid #0FF 1px;
 }
 
 .menu_area2 {
@@ -114,7 +123,6 @@ ul.menu {
 	font-family:  "Yu Gothic" , system-ui;
 	font-size: large;
 	color:var(--menu_text_color);
-	margin-top:  10px;
 	line-height: 50px;
 }
 
@@ -185,12 +193,15 @@ ul.menu {
 }
 
 .post_thumbnail img {
-/*
+
     display: block;
+
+	text-align: center;
 	margin:0px auto;
-*/
     max-width: 100%;
     height: auto;
+	border:solid #00F 1px;
+
 }
 
 
@@ -388,13 +399,46 @@ li.widget {
 	}
 		
 }
+
+
 @media screen and (max-width: 600px) {
 	:root {
 		--main_contents:90%;
 		--container_width:100%;
-/*		--sidebar_width:200;*/
+		--common_padding:20px;
 	
 	}
+
+/*
+ ***   title  ****
+ */
+
+	.title_area {
+		width: var(--container_width);
+		margin: 0 auto;
+/*		padding:  var(--common_padding);*/
+/*		border:solid #00F 3px;*/
+	}
+	/*
+	.title_area2 {
+		margin: 0px;
+	}
+	*/
+	
+	.title_area2 h1 {
+		display:block;
+/*	border:solid #00F 1px;*/
+	
+	}
+	
+	.title_description {
+/*		border:solid #0F0 1px;*/
+		display:inline-block;
+		padding-top: 10px;
+
+	}
+	
+	
 	.menu li {
 		float:none;
 		text-align: left;
@@ -404,6 +448,7 @@ li.widget {
 		height: 150px;
 	}
 	.menu_area2 {
+		margin-top:  0px;
 		line-height: 30px;
 	}
 	
