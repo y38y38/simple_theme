@@ -26,8 +26,8 @@
 	/*
 	 *** color ***
 	 */
-	--content_color   :#FAFAFA;
 	--background_color:#f2f2f2;
+	--content_color   :#FAFAFA;
 	--text_color :#888;
 
 
@@ -79,13 +79,13 @@ h2 {
 }
 
 /*
-.title_area2 {
+.title_text_area {
 	margin: var(--common_padding);
 	border:solid #00F 1px;
 
 }
 */
-.title_area2 h1 {
+.title_text_area h1 {
 	display:inline;
 }
 
@@ -113,10 +113,10 @@ ul.menu {
 .menu_area {
 	background:var(--menu_background_color);
 	height: 50px;
-	border:solid #0FF 1px;
+/*	border:solid #0FF 1px;*/
 }
 
-.menu_area2 {
+.menu_text_area {
 	width: var(--container_width);
 	margin: 0 auto;
 
@@ -170,8 +170,9 @@ ul.menu {
 /*	padding:var(--common_padding);*/
 	background-color: var(--content_color);	
 	margin:var(--common_padding);
-	border:solid #00F 1px;
 	padding-bottom: var(--common_padding);
+
+	/*	border:solid #00F 1px;*/
 }
 
 
@@ -200,7 +201,8 @@ ul.menu {
 	margin:0px auto;
     max-width: 100%;
     height: auto;
-	border:solid #00F 1px;
+
+	/*border:solid #00F 1px;*/
 
 }
 
@@ -431,17 +433,17 @@ li.widget {
 
 	.title_area {
 		width: var(--container_width);
-		margin: 0 auto;
+/*		margin: 0 auto;*/
 /*		padding:  var(--common_padding);*/
 /*		border:solid #00F 3px;*/
 	}
 	/*
-	.title_area2 {
+	.title_text_area {
 		margin: 0px;
 	}
 	*/
 	
-	.title_area2 h1 {
+	.title_text_area h1 {
 		display:block;
 /*	border:solid #00F 1px;*/
 	
@@ -463,8 +465,7 @@ li.widget {
 	.menu_area {
 		height: 150px;
 	}
-	.menu_area2 {
-		margin-top:  0px;
+	.menu_text_area {
 		line-height: 30px;
 	}
 	
@@ -473,7 +474,7 @@ li.widget {
 	.main_area2 {
 		display: flex;
 		flex-direction: column;
-		border:solid #0F0 1px;
+/*		border:solid #0F0 1px;*/
 		word-break: break-all;/* URLを折り返すため*/
 	
 	}

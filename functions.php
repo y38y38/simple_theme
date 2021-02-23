@@ -41,10 +41,8 @@ function my_theme_widgets_init() {
 /*title とメニューを表示用の関数*/
 function my_title_and_menu() {
 	echo '<div class="title_area">';
-	echo '	<div class="title_area2">';
-	echo '	<h1 >';
-	echo 			get_bloginfo( 'name' );
-	echo '	</h1>';
+	echo '	<div class="title_text_area">';
+	echo '<h1 ><a href="' .  get_home_url() . '">' . get_bloginfo( 'name' ) . '</h1>';
 	echo '		<span class="title_description">';
 	echo 				get_bloginfo( 'description' );
 	echo '		</span>';
@@ -52,13 +50,54 @@ function my_title_and_menu() {
 	echo '	</div>';
 	echo ' </div>';
 	echo '<div class="menu_area">';
-	echo '	<div class="menu_area2">';
+	echo '	<div class="menu_text_area">';
 	echo 			wp_nav_menu( array( 
 					'theme_location' => 'main-menu', 
 				)); 
 	echo '	</div>';
 	echo '</div>';
 }
+
+
+function my_loop_produce_post($is_short_text) {
+	if(have_posts()): 
+		while(have_posts()):
+echo		'<div class="post_produce">'; 
+				the_post();
+				the_date('Y/m/d', '<div class="date_item">', '</div>');
+echo			'<div class="post_title_item">';
+echo				'<h2><a href="' . get_the_permalink() . '">' .  get_the_title() . '</a></h2>';
+echo			'</div>';
+echo			'<div class="post_produce_category">';
+					$category=get_the_category();
+					foreach($category as $cate) {
+echo					'<a href="' . get_category_link( $cate->term_id ) . '">' . $cate->cat_name . '</a>';
+echo					'&nbsp;&nbsp;&nbsp;';
+					}
+echo			'</div>';
+echo			'</br>';
+echo			'<div class="post_thumbnail">';
+					the_post_thumbnail();
+echo			'</div>';
+				if ($is_short_text == true ) {
+echo				'<div class="post_text">';
+echo				my_post_substr();
+echo				'...';
+echo				'</div>';
+echo				'<div class="post_submit">';
+echo					'<a href="' . get_the_permalink() . '"> READ MORE</a>';
+echo				'</div>';
+				} else {
+echo				'<div class="post_content_text">';
+						the_content();
+echo				'</div>';
+				}
+echo		'</div>';
+		endwhile;
+	endif;
+
+}
+
 
 /* index用のテキスト抜粋用の関数*/
 define("POST_TEXT_SIZE", 70);
