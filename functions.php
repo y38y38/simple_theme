@@ -42,11 +42,10 @@ function my_theme_widgets_init() {
 function my_title_and_menu() {
 	echo '<div class="title_area">';
 	echo '	<div class="title_text_area">';
-	echo '<h1 ><a href="' .  get_home_url() . '">' . get_bloginfo( 'name' ) . '</h1>';
+	echo '<h1 ><a href="' .  get_home_url() . '">' . get_bloginfo( 'name' ) . '</a></h1>';
 	echo '		<span class="title_description">';
 	echo 				get_bloginfo( 'description' );
 	echo '		</span>';
-	echo '		</br>';
 	echo '	</div>';
 	echo ' </div>';
 	echo '<div class="menu_area">';
