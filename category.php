@@ -1,50 +1,88 @@
 <?php get_header(); ?>
-aaa
-<?php
-//$catに現在のカテゴリのIDが格納されている
-$this_cat_children = get_term_children( $cat, 'category' );//子カテゴリを取得する
-//var_dump($this_cat_children);
+<div class="container">
+	<div class="title_area">
+		<div class="title_area2">
+		<h1 style="display:inline">
+			<?php
+				bloginfo( 'name' );
+			?>
+			</h1>
+			&nbsp;
+			&nbsp;
+	
+			<?php
+				bloginfo( 'description' );
+			?>
+			</br>
+		</div>
+	</div>
 
-if($this_cat_children):
-	//子カテゴリがある＝おそらく親カテゴリ の場合の処理
-	foreach($this_cat_children as $children)://子カテゴリのループ開始
-		$children_obj = get_category( $children );//子カテゴリの情報を取得
-		$name = $children_obj->cat_name;//カテゴリ名を取得
-		$category_link = get_category_link( $children );//カテゴリへのリンクを取得
-		if ($children_obj->count > 0 ) {
-			echo '<h2><a href="' . get_category_link( $children_obj->term_id ) . '">' . $children_obj->name . "</a></h2>";
-			echo "<ul>";
-		}
-		?>
 
-<?php
-		$args = array(
-    		'posts_per_page' => -1,//記事を表示する件数　全件の場合-1
-    		'category' => $children
-    		);
-		$myposts = get_posts( $args );//子カテゴリの記事を格納
-		foreach ( $myposts as $post ) : 
-			setup_postdata( $post );//記事のループ開始 
-			$title =  get_the_title($id);
-			$p_link = get_the_permalink($id);
+	<div class="menu_area">
+		<div class="menu_area2">
+			<?php 
+				wp_nav_menu( array( 
+					'theme_location' => 'main-menu', 
+				)); 
+			?>
+		</div>
+	</div>
+	
+	<div class="main_area">
+		<div class="main_area2"">
+			<div class="main_content_area" >
+				<?php 
+					if(have_posts()): 
+						while(have_posts()):
+				?>
+						<div class="post_produce"> 
+							<?php
+								the_post();
+								the_date('Y/m/d', '<div class="date_item">', '</div>');
+							?>
+								<div class="post_title_item">
+									<h2><a href="<?php the_permalink() ?>"> <?php the_title() ?></a></h2>
+								</div>
+								<div class="post_produce_category">
+								<?php
+									$category=get_the_category();
+									foreach($category as $cate) {
+										echo '<a href="' . get_category_link( $cate->term_id ) . '">' . $cate->cat_name . '</a>';
+										echo '&nbsp;&nbsp;&nbsp;';
+									}
+								?>
+								</div>
+							</br>
+							
+							<div class="post_thumbnail">
+								<?php
+									$width_and_height = get_thumbnail_width_and_height($post_id, INDEX_THUMNAIL_WIDTH);
+									//echo  $width_and_height[0] .  "x" . $width_and_height[1] . "</br>";
+									the_post_thumbnail($width_and_height);
+								?>
+							</div>
+							<div class="post_content_text">
+								<?php the_content(); ?>
+							</div>
 
-			echo '<li class="excerpt-item"><a href="' . $p_link . '" title="' . esc_attr( $title ) . '">';
-			echo get_the_post_thumbnail( $id, 'thumbnail' );
-			echo '</a>';
-			echo '<div class="post-box"><h3><a href="' . $p_link . '">' . $title . '</a></h3>';
-			echo '<div class="post-info"><a href="' . $category_link . '">' . $children_obj->name . '</a>｜';
-			echo get_the_date( 'y,m,d' );
-			echo '</div></div>';
-			echo '</li>';
-		endforeach; //記事のループ終了
-		wp_reset_postdata();?>
+						</div>
+				<?php
+						endwhile;
+					endif;
+				?>
+			</div>
+			<div class="sidebar_area">
+				<?php
+					get_sidebar();
+				?>
+			</div>
+		</div>
+	</div>
 
-<?php
-		echo "</ul>";
-
-endforeach;//子カテゴリのループ終了
-endif;
-?>
-
+</div>
 <?php get_footer(); ?>
+
+
+
+
 
