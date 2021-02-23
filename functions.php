@@ -64,7 +64,7 @@ function my_loop_produce_post($is_short_text) {
 		while(have_posts()):
 echo		'<div class="post_produce">'; 
 				the_post();
-				the_date('Y/m/d', '<div class="date_item">', '</div>');
+echo			'<div class="date_item">' . get_the_date('Y/m/d') . '</div>';
 echo			'<div class="post_title_item">';
 echo				'<h2><a href="' . get_the_permalink() . '">' .  get_the_title() . '</a></h2>';
 echo			'</div>';
@@ -81,7 +81,7 @@ echo			'<div class="post_thumbnail">';
 echo			'</div>';
 				if ($is_short_text == true ) {
 echo				'<div class="post_text">';
-echo				my_post_substr();
+echo				'<a href="' . get_the_permalink() . '">' . my_post_substr() . '</a>';
 echo				'...';
 echo				'</div>';
 echo				'<div class="post_submit">';

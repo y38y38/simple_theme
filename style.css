@@ -241,29 +241,30 @@ ul.menu {
 	line-height: 30px;
 }
 
-.post_content_text  h1, h2, h3, h4, h5, h6, h7 {
+.post_content_text h1, 
+.post_content_text h2, 
+.post_content_text h3, 
+.post_content_text h4,
+.post_content_text h5,
+.post_content_text h6 {
 	padding-top:40px;
+	padding: 1rem 2rem;
+	margin-top:20px;
+
+	font-weight: bolder;
+
+	background-color: var(--background_color);
+	color: var(--text_color);	
 }
 
 .post_content_text h3 {
 	border-left:6px solid #000;
 	font-size: xx-large;
-	font-weight: bolder;
-/*	padding : var(--common_padding);*/
-	color: var(--text_color);	
-	padding: 1rem 2rem;
-	margin-top:20px;
-	background-color: var(--background_color);
 }
 
 .post_content_text h4 {
 	font-size: xx-large;
 	font-weight: bolder;
-/*	padding : var(--common_padding);*/
-	color: var(--text_color);	
-	padding: 1rem 2rem;
-	margin-top:20px;
-	background-color: var(--background_color);
 	border-bottom: 3px solid #000;
 }
 
@@ -271,19 +272,10 @@ ul.menu {
 	border-left:4px solid #000;
 	font-size: x-large;
 	font-weight: bolder;
-	color: var(--text_color);	
-	padding: 1rem 2rem;
-	margin-top:20px;
-	background-color: var(--background_color);
 }
 
 .post_content_text h6 {
 	font-size: x-large;
-	font-weight: bolder;
-	color: var(--text_color);	
-	padding: 1rem 2rem;
-	margin-top:20px;
-	background-color: var(--background_color);
 	border-bottom: 2px solid #000;
 }
 
