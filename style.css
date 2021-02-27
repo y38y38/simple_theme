@@ -29,7 +29,7 @@
 	--background_color:#f2f2f2;
 	--content_color   :#FAFAFA;
 	--code_color   :#F7F7F7;
-	--text_color :#888;
+	--text_color :#777;
 
 
 	--menu_background_color:#000;
@@ -182,6 +182,7 @@ ul.menu {
 }
 
 
+
 .date_item {
 	text-align: center;
 	padding-top: var(--common_padding);
@@ -242,6 +243,14 @@ ul.menu {
 	line-height: 30px;
 }
 
+
+.post_produce h1 {
+	font-size: xxx-large;
+	font-weight: bolder;
+	color: var(--text_color);	
+}
+
+
 .post_content_text h1, 
 .post_content_text h2, 
 .post_content_text h3, 
@@ -249,35 +258,39 @@ ul.menu {
 .post_content_text h5,
 .post_content_text h6 {
 	padding-top:40px;
-	padding: 1rem 2rem;
+	padding: 1rem 1rem;
 	margin-top:20px;
-
+	margin-left: 10px;
 	font-weight: bolder;
 
 	background-color: var(--background_color);
 	color: var(--text_color);	
 }
 
-.post_content_text h3 {
-	border-left:6px solid #000;
+.post_content_text h2 {
+	border-left:8px solid #000;
 	font-size: xx-large;
 }
 
-.post_content_text h4 {
+
+.post_content_text h3 {
 	font-size: xx-large;
-	font-weight: bolder;
 	border-bottom: 3px solid #000;
 }
 
-.post_content_text h5 {
-	border-left:4px solid #000;
+.post_content_text h4 {
 	font-size: x-large;
-	font-weight: bolder;
+	border-left:6px solid #000;
+}
+
+.post_content_text h5 {
+	font-size: x-large;
+	border-bottom: 2px solid #000;
 }
 
 .post_content_text h6 {
-	font-size: x-large;
-	border-bottom: 2px solid #000;
+/*	font-size: x-large;*/
+	border-left:4px solid #000;
 }
 
 .post_content_text img {
@@ -285,6 +298,37 @@ ul.menu {
     height: auto;
 }
 
+
+
+.post_content_text ul {
+/*	background-color: var(--background_color);*/
+/*	list-style:none;*/
+}
+
+.post_content_text > ul {
+/*	margin-top: 10px;*/
+	padding-top:20px;
+}
+
+.post_content_text ul li {
+	margin-top: 10px;
+/*	list-style:square ;*/
+/*	list-style: url('image/check.png');*/
+	background-image: url('image/check_icon_32x32.png');
+	background-repeat: no-repeat;
+	background-size: 20px;
+	background-position:top 3px left 17px;
+	line-height: 30px;
+	padding-left: 40px;
+
+}
+.post_content_text li ul li {
+	list-style: square;
+	list-style-position: inside;
+	background-image:none;
+/*	padding-left: 80px;*/
+	padding-left: 40px;
+}
 
 
 /*
@@ -389,6 +433,8 @@ li.widget {
 /*	line-height: 24px;*/
 
 }
+
+
 
 
 

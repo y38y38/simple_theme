@@ -65,7 +65,11 @@ echo		'<div class="post_produce">';
 				the_post();
 echo			'<div class="date_item">' . get_the_date('Y/m/d') . '</div>';
 echo			'<div class="post_title_item">';
-echo				'<h2><a href="' . get_the_permalink() . '">' .  get_the_title() . '</a></h2>';
+				if (is_single()) {
+					echo	'<h1><a href="' . get_the_permalink() . '">' .  get_the_title() . '</a></h1>';
+				} else {
+					echo	'<h2><a href="' . get_the_permalink() . '">' .  get_the_title() . '</a></h2>';
+				}
 echo			'</div>';
 echo			'<div class="post_produce_category">';
 					$category=get_the_category();
