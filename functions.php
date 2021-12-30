@@ -66,7 +66,7 @@ echo		'<div class="post_produce">';
 echo			'<div class="date_item">' . get_the_date('Y/m/d') . '</div>';
 echo			'<div class="post_title_item">';
 				if (is_single()) {
-					echo	'<h1><a href="' . get_the_permalink() . '">' .  get_the_title() . '</a></h1>';
+					echo	'<h1>' .  get_the_title() . '</h1>';
 				} else {
 					echo	'<h2><a href="' . get_the_permalink() . '">' .  get_the_title() . '</a></h2>';
 				}

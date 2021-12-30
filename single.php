@@ -15,8 +15,10 @@
 	</div>
 
 </div>
-<?php previous_post_link(); ?>
-<?php next_post_link(); ?>
+<div class="post_content_text">
+Prev:<?php previous_post_link(); ?><br><br>
+Next:<?php next_post_link(); ?>
+</div>
 <?php get_footer(); ?>
 
 
